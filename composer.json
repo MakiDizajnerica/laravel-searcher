@@ -1,0 +1,39 @@
+{
+    "name": "makidizajnerica/laravel-searcher",
+    "description": "Simple model and multi-model search.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["php", "laravel", "framework", "models", "model", "search", "eloquent"],
+    "homepage": "https://github.com/MakiDizajnerica/laravel-searcher",
+    "authors": [
+        {
+            "name": "Nemanja Marijanovic",
+            "email": "n.marijanovic@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": ">=9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.9",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MakiDizajnerica\\Searcher\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MakiDizajnerica\\Searcher\\Tests": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MakiDizajnerica\\Searcher\\ServiceProvider"
+            ]
+        }
+    }
+}
