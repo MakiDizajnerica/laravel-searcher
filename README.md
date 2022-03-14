@@ -1,4 +1,4 @@
-# Laravel MultiEmail
+# Laravel Searcher
 
 Simple model and multi-model search.
 
