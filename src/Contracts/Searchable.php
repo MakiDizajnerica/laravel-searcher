@@ -10,4 +10,12 @@ interface Searchable
      * @return array<int, string>
      */
     public function attributesForTags(): array;
+
+    /**
+     * Map model properties that will be available
+     * inside SearchResultCollection.
+     * 
+     * @return array
+     */
+    public function mapForSearch(): array;
 }

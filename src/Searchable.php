@@ -205,6 +205,17 @@ trait Searchable
 
 
     /**
+     * Map model properties that will be available
+     * inside SearchResultCollection.
+     * 
+     * @return array
+     */
+    public function mapForSearch(): array
+    {
+        return $this->attributes;
+    }
+
+    /**
      * Scope model with specific tags.
      * 
      * @param  \Illuminate\Database\Eloquent\Builder $query
