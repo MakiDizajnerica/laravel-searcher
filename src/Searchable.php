@@ -3,6 +3,7 @@
 namespace MakiDizajnerica\Searcher;
 
 use MakiDizajnerica\Searcher\Models\Tag;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 trait Searchable
