@@ -12,7 +12,7 @@ class SearchResultCollection extends Collection
      * @param  \Illuminate\Database\Eloquent\Collection $results
      * @return void
      */
-    public function addResults(Collection $results)
+    public function addResults(Collection $results): void
     {
         $this->items = $this->merge(
             $results->pipe(fn ($results) => $results->all())
@@ -22,9 +22,9 @@ class SearchResultCollection extends Collection
     /**
      * Group results by their defined search type.
      * 
-     * @return void
+     * @return $this
      */
-    public function groupBySearchType()
+    public function groupBySearchType(): static
     {
         return $this->groupBy(fn ($result) => $result->getSearchType());
     }

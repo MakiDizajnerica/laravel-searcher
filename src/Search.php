@@ -4,6 +4,7 @@ namespace MakiDizajnerica\Searcher;
 
 use Closure;
 use InvalidArgumentException;
+use Illuminate\Database\Eloquent\Builder;
 use MakiDizajnerica\Searcher\Collections\SearchResultCollection;
 use MakiDizajnerica\Searcher\Contracts\Searchable as SearchableContract;
 
@@ -12,7 +13,7 @@ class Search
     /**
      * @var array<int, \Illuminate\Database\Eloquent\Builder>
      */
-    protected $models = [];
+    protected array $models = [];
 
     /**
      * Add model for multiple search.
@@ -23,7 +24,7 @@ class Search
      * 
      * @throws \InvalidArgumentException
      */
-    public function addModel($model, $scope = null)
+    public function addModel(string $model, mixed $scope = null)
     {
         if (! in_array(SearchableContract::class, class_implements($model) ?? [])) {
             throw new InvalidArgumentException(
@@ -43,7 +44,7 @@ class Search
      * @param  bool $strict
      * @return \MakiDizajnerica\Searcher\Collections\SearchResultCollection
      */
-    public function search(string $search = '', $strict = false): SearchResultCollection
+    public function search(string $search = '', bool $strict = false): SearchResultCollection
     {
         $collection = new SearchResultCollection;
 
@@ -63,7 +64,7 @@ class Search
      * @param  mixed $scope
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    protected function formatQuery($query, $scope)
+    protected function formatQuery(Builder $query, mixed $scope): Builder
     {
         switch (true) {
             case $scope instanceof Closure:

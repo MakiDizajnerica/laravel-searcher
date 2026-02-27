@@ -8,7 +8,6 @@ class Tag extends Model
 {
     protected $table = 'tags';
     protected $primaryKey = 'id';
-
     public $incrementing = true;
     public $timestamps = false;
 

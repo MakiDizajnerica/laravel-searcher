@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('tag', 128)->index();
-            $table->smallInteger('used')->default(0);
+            $table->bigIncrements('id')->unsigned();
+            $table->string('tag', 255)->index();
+            $table->unsignedSmallInteger('used')->default(0);
         });
     }
 

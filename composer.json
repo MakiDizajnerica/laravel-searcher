@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MakiDizajnerica\\Searcher\\ServiceProvider"
+                "MakiDizajnerica\\Searcher\\SearcherServiceProvider"
             ]
         }
     }

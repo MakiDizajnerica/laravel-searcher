@@ -4,7 +4,7 @@ namespace MakiDizajnerica\Searcher;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class SearcherServiceProvider extends BaseServiceProvider
 {
     /**
      * Bootstrap any application services.
